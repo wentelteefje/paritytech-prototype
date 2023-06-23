@@ -1,0 +1,13 @@
+baseURL = 'https://example.com'
+languageCode = 'en-us'
+title = 'Parity Tech Rework'
+theme = 'hugo-book-master'
+enableGitInfo = true
+[params]
+  BookLogo = 'parity-logo-square.png'
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    startLevel = 1
+[markup.goldmark.renderer]
+  unsafe = true
