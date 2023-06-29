@@ -1,0 +1,6 @@
+{{ $image := .Get 0 }}
+{{ $text := .Get 1 }}
+<div style="display: flex; align-items: center;">
+  <img src="{{ $image }}" alt="{{ $text }}" style="margin-right: 10px; width: 200px;">
+  <p>{{ $text }}</p>
+</div>

@@ -1,0 +1,26 @@
+<div class="nes-table-responsive">
+    <table class="nes-table is-bordered is-dark">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Opened</th>
+                <th>Project</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .Site.Data.issue_data }}
+            <tr>
+                <td><a href="{{.url}}">{{.title}}</a></td>
+                <td>{{.days_ago}}d ago</td>
+                {{ if eq .project "substrate" }}
+                <td><a href="#" class="nes-badge"><span class="is-substrate">{{.project}}</span></a></span></td>
+                {{ else if eq .project "polkadot" }}
+                <td><a href="#" class="nes-badge"><span class="is-polkadot">{{.project}}</span></a></span></td>
+                {{ else if eq .project "ink" }}
+                <td><a href="#" class="nes-badge"><span class="is-ink">{{.project}}</span></a></span></td>
+                {{end}}
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,6 @@
+{{ $data := getJSON "/data/repo_info.json" }}
+{{ $repo := .Get 0 }}
+{{ with index $data $repo }}
+This repository has {{.star_count}}<i class="nes-icon is-small star"></i> with {{.total_commits}} total commits, {{.daily_average_commits}} daily average commits 
+and {{.commit_count_last_24}} commits in the last 24 hours.
+{{ end }}

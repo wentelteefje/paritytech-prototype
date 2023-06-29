@@ -1,0 +1,24 @@
+{{ $data := getJSON "/data/repo_info.json" }}
+{{ $repo := .Get 0 }}
+{{ with index $data $repo }}
+<div class="nes-table-responsive">
+    <table class="nes-table is-bordered is-dark">
+        <thead>
+            <tr>
+                <th><i class="nes-icon is-small star"></i></th>
+                <th>Commits Total</th>
+                <th>Commits Daily AVG</th>
+                <th>Commits Last 24h</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{.star_count}}</td>
+                <td>{{.total_commits}}</td>
+                <td>{{.daily_average_commits}}</td>
+                <td>{{.commit_count_last_24}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{ end }}

@@ -1,0 +1,35 @@
+{{ $data := getJSON "/data/repo_info.json" }}
+{{ $repo := .Get 0 }}
+{{ with index $data $repo  }}
+<style>
+.contributor {
+  display: inline-block;
+  margin: 1rem;
+  text-align: center;
+  width: 160px;
+}
+.contributor > p {
+  margin: .5rem;
+  font-size: 12px;
+}
+.contributor img.nes-avatar {
+  transition: all .4s;
+  display: inline-block;
+}
+.is-rounded {
+    border-radius: 50px;
+}
+.contributor:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+</style>
+<div>
+{{ range .contributors }}
+  <a href="{{.html_url}}" class="contributor">
+    <img data-src="{{.avatar_url}}" alt="Contributor {{.login}}" class="nes-avatar is-large is-rounded" src="{{.avatar_url}}" width="64" height="64">
+    <p>{{.login}}</p>
+  </a>
+{{ end }}
+</div>
+{{ end }}

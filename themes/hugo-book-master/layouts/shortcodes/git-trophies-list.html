@@ -1,0 +1,70 @@
+<style>
+.nes-table td .avatar.is-large.is-rounded > img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.profile {
+  display: flex;
+  margin-left: 1.5rem;
+}
+.profile > .name {
+  font-size: 20px;
+}
+</style>
+<div class="nes-table-responsive">
+    <table class="nes-table is-bordered is-dark is-centered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>User</th>
+                <th>Issue</th>
+                <th>Closed</th>
+                <th>Project</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .Site.Data.trophy_data }}
+            <tr>
+                <td>
+                    <div class="avatar">
+                        <img data-src="{{.assignee.avatar_url}}" alt="Contributor {{.assignee.login}}" class="avatar is-large is-rounded" src="{{.assignee.avatar_url}}?size=80">
+                    </div>
+                </td>
+                <td>
+                    <div class="profile">
+                        <h4 class="name">{{.assignee.login}}</h4>
+                        <div>
+                            <a href="{{.assignee.html_url}}" target="_blank" rel="noopener" aria-label="github"><i class="nes-icon github"></i></a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a href="{{.url}}">{{.title}}</a>
+                </td>
+                <td>{{.days_ago}}d ago</td>
+                {{ if eq .project "substrate" }}
+                <td>
+                    <a href="#" class="nes-badge">
+                        <span class="is-substrate">{{.project}}</span>
+                    </a>
+                </td>
+                {{ else if eq .project "polkadot" }}
+                <td>
+                    <a href="#" class="nes-badge">
+                        <span class="is-polkadot">{{.project}}</span>
+                    </a>
+                </td>
+                {{ else if eq .project "ink" }}
+                <td>
+                    <a href="#" class="nes-badge">
+                        <span class="is-ink">{{.project}}</span>
+                    </a>
+                </td>
+                {{end}}
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</div>
