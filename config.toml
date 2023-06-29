@@ -1,4 +1,4 @@
-baseURL = 'https://example.com'
+baseURL = 'https://wentelteefje.github.io/paritytech-prototype/'
 languageCode = 'en-us'
 title = 'Parity Tech Rework'
 theme = 'hugo-book-master'
