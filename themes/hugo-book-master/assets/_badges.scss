@@ -67,6 +67,7 @@
 
   position: relative;
   display: inline-block;
+  // display: flex;
   width: $em * 14;
   height: $em * 2.5;
   margin: 0.5em;
@@ -107,3 +108,11 @@
     }
   }
 }
+// Responsiveness test
+// @media screen and (max-width: 480px) {
+//   .nes-badge {
+//     width: 25%;
+//     white-space: normal; /* Allows text to wrap */
+//     // visibility: hidden;
+//   }
+// }

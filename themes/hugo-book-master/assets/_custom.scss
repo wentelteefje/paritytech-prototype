@@ -11,3 +11,267 @@
 @import "icons";
 @import "balloons";
 @import "bcrikko";
+
+// Issue table SCSS
+.table {
+    display: flex;
+    color: $background-color;
+    background-color: $base-color;
+    flex-direction: column;
+    width: 100%;
+    @include compact-rounded-corners(true);
+
+    margin: 4px;
+    border-spacing: 0;
+    border-collapse: separate;
+
+    .row {
+      display: flex;
+      flex-direction: column;
+    //   border: 1px solid $background-color;
+      border-width: 0 0.25em 0.25em 0;
+      margin-bottom: 0em;
+
+      border-bottom: 4px solid white;  // Add a white border to the bottom of each row
+      &:last-child {
+        border-bottom: none;  // Remove the border from the bottom of the last row
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0em;
+      }
+      &:nth-child(2n) {
+        background: var(--gray-100);
+      }
+
+      .cell {
+        padding: 0.5em;
+        border-top: 1px solid #ddd;
+        // border-width: 0 0.25em 0.25em 0;
+
+        &:first-child {
+          border-top: none;
+          display: flex;
+          justify-content: center;
+          flex: 0 0 15%;  // 25% width for the first cell, no shrink
+        }
+        &:nth-child(2) {
+            flex: 1 1 75%;  // 50% width for the second cell, can shrink
+        }
+        &:nth-child(3) {
+        flex: 1 1 10%;  // 25% width for the third cell, can shrink
+        }
+      }
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+
+        .cell {
+          border-top: none;
+          border-left: 1px solid #ddd;
+          flex-grow: 1;   // All cells can grow
+
+          &:first-child {
+            border-left: none;
+            // flex: 0 0 25%;  // 25% width for the first cell, no shrink
+            justify-content: flex-start;  // align content to the left on larger screens
+          }
+
+          &:nth-child(2) {
+            flex: 1 1 75%;  // 50% width for the second cell, can shrink
+          }
+
+          &:nth-child(3) {
+            flex: 1 1 10%;  // 25% width for the third cell, can shrink
+          }
+        }
+        @media (max-width: 767px) { 
+            // Add margin and border radius to separate and round the boxes
+            margin: 0.5em;
+            border-radius: 0.5em;
+    
+            &:first-child {
+                margin-top: 0.5em;
+            }
+            &:last-child {
+                margin-bottom: 0.5em;
+            }
+        }
+      }
+    //   @media (max-width: 767px) {
+    //     &:not(:last-child) {
+    //       margin-bottom: 0.5em;
+    //     }
+    //   }
+    }
+  }
+  #paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    button {
+      margin: 0.5rem;
+    }
+  }  
+// Image + Description SCSS
+.image-text {
+    display: flex;
+    align-items: center;
+  
+    img {
+      margin-right: 10px;
+      width: 200px;
+    }
+  
+    p {
+      margin: 0;  // To reset the default margins
+      text-align: justify;  // Justify the text
+    }
+  
+    @media (max-width: 767px) {
+      flex-direction: column;
+  
+      img {
+        margin-right: 0;
+        margin-bottom: 10px;  // Add some space below the image on small screens
+      }
+    }
+  }
+
+// Collab list
+.contributors-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: start;
+    margin: 0 0.1rem; // add this line to control the space to the left and right of the row
+  
+    .contributor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+  
+      img.nes-avatar {
+        transition: all .4s;
+        border-radius: 50px; // this is to make the avatar rounded
+        width: 64px;
+        height: 64px;
+      }
+  
+      p {
+        margin: .5rem;
+        font-size: 12px;
+      }
+  
+      &:hover {
+        text-decoration: none;
+        opacity: 0.7;
+      }
+    }
+  
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+  }
+  // Trophy SCSS
+  .flex-table {
+    display: flex;
+    flex-direction: column;
+    color: $background-color;
+    background-color: $base-color;
+    @include compact-rounded-corners(true);
+
+    margin: 4px;
+    border-spacing: 0;
+    border-collapse: separate;
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        border-width: 0 0.25em 0.25em 0;
+        margin-bottom: 0em;
+
+        border-bottom: 4px solid white;  // Add a white border to the bottom of each row
+
+        &:not(:last-child) {
+            margin-bottom: 1em; // Add a gap between rows in mobile view
+        }
+        &:nth-child(2n) {
+            background: var(--gray-100);
+        }
+
+        .cell {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5em;
+            // border-top: 1px solid #ddd;
+            border-top: none;
+            border-left: 1px solid #ddd;
+
+            &:first-child {
+                flex-direction: row;  // To display the image and the name side by side
+                justify-content: start;
+                align-items: center;
+                flex: 0 0 28%;
+
+                img.v-avatar {
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    margin-right: 0.5em;
+                }
+
+                @media (max-width: 768px) {
+                    justify-content: center;
+                    text-align: center;  // If you want the text also centered
+                }
+            }
+            &:nth-child(2) {
+                flex: 1 1 67%;  // 50% width for the second cell, can shrink
+                align-items: flex-start;
+            }
+            &:nth-child(3) {
+                flex: 1 1 5%;  // 25% width for the third cell, can shrink
+                align-items: flex-start;
+            }
+
+            // &:nth-child(n+2) {
+            //     flex: 1; // Take up remaining space
+            // }
+        }
+
+        &.header {
+            display: none;  // Hide the header row in mobile view
+        }
+    }
+
+    @media (min-width: 768px) {
+        .row {
+            flex-direction: row;
+
+            &:not(:last-child) {
+                margin-bottom: 0; // Remove the gap between rows in desktop view
+            }
+
+            .cell {
+                flex-direction: column;  // To display the image and the name stacked
+                justify-content: center;
+                align-items: center;
+
+                // &:nth-child(n+2) {
+                //     flex: 1; // Take up remaining space
+                // }
+            }
+
+            &.header {
+                display: flex;  // Show the header row in desktop view
+            }
+        }
+    }
+}

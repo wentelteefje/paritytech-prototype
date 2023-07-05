@@ -1,26 +1,43 @@
-<div class="nes-table-responsive">
-    <table class="nes-table is-bordered is-dark">
+<!-- <div class="nes-table-responsive"> -->
+    <!-- <table class="nes-table is-bordered is-dark"> -->
+    <table width="100%">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Title</th>
                 <th>Opened</th>
-                <th>Project</th>
             </tr>
         </thead>
         <tbody>
             {{ range .Site.Data.issue_data }}
             <tr>
+                {{ if eq .project "substrate" }}
+                <!-- <td><a href="#" class="nes-badge"><span class="is-substrate">{{.project}}</span></a></span></td> -->
+                <td>
+                    <!-- <a href="#" class="nes-badge">
+                        <span class="is-substrate">{{.project}}</span>
+                    </a> -->
+                    s
+                </td>
+                {{ else if eq .project "polkadot" }}
+                <td>
+                    <!-- <a href="#" class="nes-badge">
+                        <span class="is-polkadot">{{.project}}</span>
+                    </a> -->
+                    p
+                </td>
+                {{ else if eq .project "ink" }}
+                <td>
+                    <!-- <a href="#" class="nes-badge">
+                        <span class="is-ink">{{.project}}</span>
+                    </a> -->
+                    i
+                </td>
+                {{end}}
                 <td><a href="{{.url}}">{{.title}}</a></td>
                 <td>{{.days_ago}}d ago</td>
-                {{ if eq .project "substrate" }}
-                <td><a href="#" class="nes-badge"><span class="is-substrate">{{.project}}</span></a></span></td>
-                {{ else if eq .project "polkadot" }}
-                <td><a href="#" class="nes-badge"><span class="is-polkadot">{{.project}}</span></a></span></td>
-                {{ else if eq .project "ink" }}
-                <td><a href="#" class="nes-badge"><span class="is-ink">{{.project}}</span></a></span></td>
-                {{end}}
             </tr>
             {{ end }}
         </tbody>
     </table>
-</div>
+<!-- </div> -->

@@ -1,0 +1,31 @@
+<div class="flex-table">
+    <div class="row header">
+        <div class="cell">User</div>
+        <div class="cell">Issue</div>
+        <div class="cell">Closed</div>
+    </div>
+    {{ range .Site.Data.trophy_data }}
+    <div class="row">
+        <div class="cell user-cell">
+            <img data-src="{{.assignee.avatar_url}}" alt="Contributor {{.assignee.login}}" class="v-avatar is-rounded" src="{{.assignee.avatar_url}}?size=80">
+            <div>
+                <h4 class="name">{{.assignee.login}}</h4>
+                <a href="{{.assignee.html_url}}" target="_blank" rel="noopener" aria-label="github"><i class="nes-icon github"></i></a>
+            </div>
+        </div>
+        <div class="cell">
+            <div style="align-items: center;">
+                {{ if eq .project "substrate" }}
+                <a href="#" class="nes-badge" style="margin-right: 10px;"><span class="is-substrate">{{.project}}</span></a>
+                {{ else if eq .project "polkadot" }}
+                <a href="#" class="nes-badge" style="margin-right: 10px;"><span class="is-polkadot">{{.project}}</span></a>
+                {{ else if eq .project "ink" }}
+                <a href="#" class="nes-badge" style="margin-right: 10px;"><span class="is-ink">{{.project}}</span></a>
+                {{end}}
+                <a href="{{.url}}">{{.title}}</a>
+            </div>
+        </div>
+        <div class="cell">{{.days_ago}}d ago</div>
+    </div>
+    {{ end }}
+</div>

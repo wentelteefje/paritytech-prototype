@@ -1,4 +1,4 @@
-{{ $data := getJSON "/data/repo_info.json" }}
+<!-- {{ $data := getJSON "/data/repo_info.json" }}
 {{ $repo := .Get 0 }}
 {{ with index $data $repo  }}
 <style>
@@ -28,6 +28,18 @@
 {{ range .contributors }}
   <a href="{{.html_url}}" class="contributor">
     <img data-src="{{.avatar_url}}" alt="Contributor {{.login}}" class="nes-avatar is-large is-rounded" src="{{.avatar_url}}" width="64" height="64">
+    <p>{{.login}}</p>
+  </a>
+{{ end }}
+</div>
+{{ end }} -->
+{{ $data := getJSON "/data/repo_info.json" }}
+{{ $repo := .Get 0 }}
+{{ with index $data $repo  }}
+<div class="contributors-container">
+{{ range .contributors }}
+  <a href="{{.html_url}}" class="contributor">
+    <img data-src="{{.avatar_url}}" alt="Contributor {{.login}}" class="nes-avatar is-large" src="{{.avatar_url}}">
     <p>{{.login}}</p>
   </a>
 {{ end }}
