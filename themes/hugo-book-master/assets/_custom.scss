@@ -11,6 +11,7 @@
 @import "icons";
 @import "balloons";
 @import "bcrikko";
+@import "octocat.scss";
 
 // Issue table SCSS
 .table {
@@ -274,4 +275,22 @@
             }
         }
     }
+}
+// Social icons
+.icon-container {
+    display: flex;
+    justify-content: space-between; // or 'space-around', depending on your preference
+    align-items: center;
+    width: 80px; // adjust this to suit your needs
+}
+.spacer {
+    flex-grow: 1;
+}
+// Git repo info
+.git-repo-info {
+    margin-top: 15px;
+}
+// Info text
+.image-text{
+    margin-bottom: 15px;
 }

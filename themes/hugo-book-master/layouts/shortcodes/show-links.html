@@ -1,0 +1,28 @@
+{{ $repo := .Get 0 }}
+{{ if eq $repo "polkadot" }}
+    <div class="nes-container with-title is-dark">
+        <p class="title">Links</p>
+        <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/polkadot">Github</a></p>
+    </div>
+{{ else if eq $repo "substrate" }}
+    <div class="nes-container with-title is-dark">
+        <p class="title">Links</p>
+        <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/substrate">Github</a></p>
+        <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/substrate/master/sc_service/index.html">Rust docs</a></p>
+    </div>
+{{ else if eq $repo "ink" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">Links</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/ink">Github</a></p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/ink-docs">Github Docs</a></p>
+    <p><i class="nes-icon close"></i><a href="https://use.ink/">Docs</a></p>
+</div>
+{{ else if eq $repo "cumulus" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">Links</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/cumulus">Github</a></p>
+    <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/cumulus/">Rust Docs</a></p>
+</div>
+{{end}}
+
+

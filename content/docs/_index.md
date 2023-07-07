@@ -14,7 +14,7 @@ math: true
 {{< tab "Polkadot" >}}
 {{< insert-desc "polkadot-logo-pixelated.png" "Polkadot is a layer-0 protocol and multichain network laying the foundation for the future of Web3. Substrate is the primary blockchain SDK used by developers to create the parachains that make up the Polkadot network." >}}
 
-{{< git-repo-info "polkadot" >}}
+{{< git-repo-info-text "polkadot" >}}
 
 ## Contributors 
 {{< git-collaborators "polkadot" >}}
@@ -45,7 +45,7 @@ math: true
 {{< /tab >}}
 {{< /tabs >}}
 
-# {{< insert-icon "" "heart" >}} Contribute!
+# {{< insert-icon "" "heart" >}} Join in!
 The following list consists of open issues from our projects, for which mentoring support is provided. It's an ideal starting point for new contributors. Prior to contributing, please ensure you have read Substrate's [ contribution](https://github.com/paritytech/substrate/blob/master/docs/CONTRIBUTING.adoc) and [documentation](https://github.com/paritytech/substrate/blob/master/docs/DOCUMENTATION_GUIDELINES.md) guidelines.
 
 {{< git-issues-new >}}

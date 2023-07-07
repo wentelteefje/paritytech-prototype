@@ -85,6 +85,10 @@ ul.pagination {
   filter: var(--icon-filter);
 }
 
+.social-icon {
+  filter: var(--icon-filter);
+}
+
 .book-brand {
   margin-top: 0;
   margin-bottom: $padding-16;
@@ -164,7 +168,9 @@ body[dir="rtl"] .book-menu {
 .book-page {
   min-width: $body-min-width;
   flex-grow: 1;
-  padding: $padding-16;
+  // padding: $padding-16;
+  // padding: $padding-4;
+  padding: 0.5rem;
 }
 
 .book-post {
@@ -182,6 +188,20 @@ body[dir="rtl"] .book-menu {
   img.book-icon {
     height: 1.5em;
     width: 1.5em;
+  }
+  img.discord-icon {
+    height: 1.3em;
+    // width: 1.5em;
+  }
+  img.element-icon {
+    height: 1.3em;
+    // width: 1.5em;
+  }
+  img.stackex-icon {
+    height: 1.3em;
+    position: relative;
+    top: 2px;
+    // width: 1.5em;
   }
 }
 
@@ -306,7 +326,18 @@ body[dir="rtl"] .book-menu {
 
   .book-header {
     display: block;
+    position: sticky;
+    top: 0;
+    background: #17181C;
+    z-index: 999;
   }
+
+  // /* The sticky class is added to the header with JS when it reaches its scroll position */
+  // .sticky {
+  //   position: fixed;
+  //   top: 0;
+  //   width: 100%;
+  // }
 
   #menu-control:focus ~ main label[for="menu-control"] {
     @include outline;

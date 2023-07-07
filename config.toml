@@ -1,10 +1,11 @@
 baseURL = 'https://wentelteefje.github.io/paritytech-prototype/'
 languageCode = 'en-us'
-title = 'Parity Tech Rework'
+title = 'Parity Tech'
 theme = 'hugo-book-master'
 enableGitInfo = true
 [params]
   BookLogo = 'parity-logo-square.png'
+  BookSearch = false
 [markup]
   [markup.tableOfContents]
     endLevel = 3

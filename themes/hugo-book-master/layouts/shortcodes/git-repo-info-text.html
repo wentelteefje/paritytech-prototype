@@ -1,6 +1,9 @@
 {{ $data := getJSON "/data/repo_info.json" }}
 {{ $repo := .Get 0 }}
 {{ with index $data $repo }}
-This repository has {{.star_count}}<i class="nes-icon is-small star"></i> with {{.total_commits}} total commits, {{.daily_average_commits}} daily average commits 
-and {{.commit_count_last_24}} commits in the last 24 hours.
-{{ end }}
+<div class="git-repo-info">
+    <i class="nes-octocat animate"></i>
+    This repository has {{.star_count}} <i class="nes-icon is-small star"></i>'s with {{.total_commits}} total commits, {{.daily_average_commits}} commits per day on average 
+    and {{.commit_count_last_24}} commits in the last 24 hours.
+    {{ end }}
+</div>

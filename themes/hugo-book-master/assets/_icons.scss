@@ -18,7 +18,7 @@
 // @import "instagram.scss";
 
 // // others
-// @import "close.scss";
+@import "close.scss";
 @import "trophy.scss";
 @import "coin.scss";
 
@@ -123,9 +123,9 @@
   //   @include pixelize($default-size, $icon-youtube, $icon-youtube-colors);
   // }
 
-  // &.close::before {
-  //   @include pixelize($default-size, $icon-close, $icon-close-colors);
-  // }
+  &.close::before {
+    @include pixelize($default-size, $icon-close, $icon-close-colors);
+  }
 
   // &.google::before {
   //   @include pixelize($default-size, $icon-google, $icon-google-colors);

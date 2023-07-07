@@ -1,10 +1,12 @@
+{{ $repo := .Get 0 }}
+{{ $filtered_trophies := where .Site.Data.trophy_data "project" $repo }}
 <div class="flex-table">
     <div class="row header">
         <div class="cell">User</div>
         <div class="cell">Issue</div>
         <div class="cell">Closed</div>
     </div>
-    {{ range .Site.Data.trophy_data }}
+    {{ range $filtered_trophies }}
     <div class="row">
         <div class="cell user-cell">
             <img data-src="{{.assignee.avatar_url}}" alt="Contributor {{.assignee.login}}" class="v-avatar is-rounded" src="{{.assignee.avatar_url}}?size=80">

@@ -1,72 +1,23 @@
-<!-- <div class="table">
-    {{ range .Site.Data.issue_data }}
-    <div class="row">
-        {{ if eq .project "substrate" }}
-        <div class="cell">
-            <a href="#" class="nes-badge">
-                <span class="is-substrate">{{.project}}</span>
-            </a>
-        </div>
-        {{ else if eq .project "polkadot" }}
-        <div class="cell">
-            <a href="#" class="nes-badge">
-                <span class="is-polkadot">{{.project}}</span>
-            </a>
-        </div>
-        {{ else if eq .project "ink" }}
-        <div class="cell">
-            <a href="#" class="nes-badge">
-                <span class="is-ink">{{.project}}</span>
-            </a>
-        </div>
-        {{end}}
-        <div class="cell"><a href="{{.url}}">{{.title}}</a></div>
-        <div class="cell">{{.days_ago}}d ago</div>
-    </div>
-    {{ end }}
-</div> -->
+{{ $repo := .Get 0 }}
+{{ $filtered_issues := where .Site.Data.issue_data "project" $repo }}
+
+{{ $pages := div (len $filtered_issues) 10 | math.Ceil }}
 <div id="issueTable" class="table">
-    {{ $pages := div (len .Site.Data.issue_data) 10 }}
-    {{ range .Site.Data.issue_data }}
-    <div class="row issue-row">
-        {{ if eq .project "substrate" }}
-        <div class="cell">
-            <a href="#" class="nes-badge">
-                <span class="is-substrate">{{.project}}</span>
-            </a>
+    {{ range $filtered_issues }}
+        <div class="row issue-row">
+            <div class="cell">
+                <a href="#" class="nes-badge">
+                    <span class="is-{{$repo}}">{{.project}}</span>
+                </a>
+            </div>
+            <div class="cell"><a href="{{.url}}">{{.title}}</a></div>
+            <div class="cell">{{.days_ago}}d ago</div>
         </div>
-        {{ else if eq .project "polkadot" }}
-        <div class="cell">
-            <a href="#" class="nes-badge">
-                <span class="is-polkadot">{{.project}}</span>
-            </a>
-        </div>
-        {{ else if eq .project "ink" }}
-        <div class="cell">
-            <a href="#" class="nes-badge">
-                <span class="is-ink">{{.project}}</span>
-            </a>
-        </div>
-        {{end}}
-        <div class="cell"><a href="{{.url}}">{{.title}}</a></div>
-        <div class="cell">{{.days_ago}}d ago</div>
-    </div>
     {{ end }}
 </div>
 
 <div id="paginationContainer">
-  {{ range seq 1 (math.Ceil $pages) }}
+  {{ range seq 0 (math.Ceil $pages) }}
     <button class="page-number" data-page="{{ . }}">{{ . }}</button>
   {{ end }}
 </div>
-  
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  paginate({
-    table: document.getElementById('issueTable'),
-    rows: Array.from(document.getElementsByClassName('issue-row')),
-    paginationContainer: document.getElementById('paginationContainer'),
-    rowsPerPage: 10
-  });
-});
-</script>

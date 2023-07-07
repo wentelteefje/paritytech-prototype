@@ -1,9 +1,16 @@
 <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="{{ "svg/menu.svg" | relURL }}" class="book-icon" alt="Menu" />
+    <img src="{{ "png/parity.png" | relURL }}" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>{{ partial "docs/title" . }}</strong>
+  <!-- <strong>{{ partial "docs/title" . }}</strong> -->
+  parity
+  <div class="spacer"></div>
+  <div class="icon-container">
+    <img src="{{ "png/discord.png" | relURL }}" class="social-icon discord-icon" alt="Discord" />
+    <img src="{{ "png/element.png" | relURL }}" class="social-icon element-icon" alt="Element" />
+    <img src="{{ "png/stackex.png" | relURL }}" class="social-icon stackex-icon" alt="Stack Exchange" />
+  </div>
 
   <label for="toc-control">
     {{ if default true (default .Site.Params.BookToC .Params.BookToC) }}
