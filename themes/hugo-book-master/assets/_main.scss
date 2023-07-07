@@ -393,3 +393,21 @@ body[dir="rtl"] .book-menu {
     padding: $padding-16 * 2 $padding-16;
   }
 }
+// Added
+.nav-container{
+  margin-top: 50px;
+}
+.discord-icon {
+  height: 1.3em;
+  // width: 1.5em;
+}
+.element-icon {
+  height: 1.3em;
+  // width: 1.5em;
+}
+.stackex-icon {
+  height: 1.3em;
+  position: relative;
+  top: 2px;
+  // width: 1.5em;
+}

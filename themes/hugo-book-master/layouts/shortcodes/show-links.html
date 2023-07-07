@@ -1,28 +1,79 @@
 {{ $repo := .Get 0 }}
 {{ if eq $repo "polkadot" }}
     <div class="nes-container with-title is-dark">
-        <p class="title">Links</p>
+        <p class="title">{{$repo}}</p>
         <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/polkadot">Github</a></p>
+        <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/polkadot/book/">Parachain Implementers' Guide</a></p>        
     </div>
 {{ else if eq $repo "substrate" }}
     <div class="nes-container with-title is-dark">
-        <p class="title">Links</p>
+        <p class="title">{{$repo}}</p>
         <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/substrate">Github</a></p>
         <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/substrate/master/sc_service/index.html">Rust docs</a></p>
     </div>
 {{ else if eq $repo "ink" }}
 <div class="nes-container with-title is-dark">
-    <p class="title">Links</p>
+    <p class="title">{{$repo}}</p>
     <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/ink">Github</a></p>
     <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/ink-docs">Github Docs</a></p>
     <p><i class="nes-icon close"></i><a href="https://use.ink/">Docs</a></p>
 </div>
 {{ else if eq $repo "cumulus" }}
 <div class="nes-container with-title is-dark">
-    <p class="title">Links</p>
+    <p class="title">{{$repo}}</p>
     <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/cumulus">Github</a></p>
     <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/cumulus/">Rust Docs</a></p>
 </div>
+{{ else if eq $repo "wasmi" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/wasmi">Github</a></p>
+    <p><i class="nes-icon close"></i><a href="https://docs.rs/wasmi/latest/wasmi/">Rust Docs</a></p>
+</div>
+{{ else if eq $repo "substrate-playground" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/substrate-playground">Github</a></p>
+</div>
+{{ else if eq $repo "substrate-connect" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/substrate-connect">Github</a></p>
+</div>
+{{ else if eq $repo "frontier" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/frontier">Github</a></p>
+    <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/frontier/">Docs</a></p>
+</div>
+{{ else if eq $repo "contracts-ui" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/contracts-ui">Github</a></p>
+</div>
+{{ else if eq $repo "banana-split" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/banana_split">Github</a></p>
+    <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/banana_split">Website</a></p>
+</div>
+{{ else if eq $repo "parity-signer" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/parity-signer">Github</a></p>
+    <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/parity-signer">Docs</a></p>
+</div>
+{{ else if eq $repo "xcm-docs" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/xcm-docs">Github</a></p>
+    <p><i class="nes-icon close"></i><a href="https://paritytech.github.io/xcm-docs">Docs</a></p>
+</div>
+{{ else if eq $repo "scale-codec" }}
+<div class="nes-container with-title is-dark">
+    <p class="title">{{$repo}}</p>
+    <p><i class="nes-icon github"></i><a href="https://github.com/paritytech/parity-scale-codec">Github</a></p>
+    <p><i class="nes-icon close"></i><a href="https://docs.rs/parity-scale-codec/latest/parity_scale_codec/">Rust Docs</a></p>
+    <p><i class="nes-icon close"></i><a href="https://wentelteefje.github.io/parity-scale-codec-page/docs/intro/">Docs</a></p>
+</div>
 {{end}}
-
-
