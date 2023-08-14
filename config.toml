@@ -4,7 +4,7 @@ title = 'Parity Tech'
 theme = 'hugo-book-master'
 enableGitInfo = true
 [params]
-  BookLogo = 'parity-logo-square.png'
+  BookLogo = 'parity-logo-square-w.png'
   BookSearch = false
 [markup]
   [markup.tableOfContents]
