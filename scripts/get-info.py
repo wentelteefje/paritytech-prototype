@@ -88,5 +88,5 @@ for repo in repo_list:
         "contributors": contributor_info
     }
 
-with open('repo_info.json', 'w') as f:
+with open('../data/repo_info.json', 'w') as f:
     json.dump(results, f)

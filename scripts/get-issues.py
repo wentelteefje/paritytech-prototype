@@ -44,5 +44,5 @@ for (repo,label) in zip(repo_list,label_list):
 sorted_issue_data = sorted(issue_data, key=lambda x: x['days_ago'])
 
 # Save to JSON file
-with open('issue_data.json', 'w') as f:
+with open('../data/issue_data.json', 'w') as f:
     json.dump(sorted_issue_data, f)

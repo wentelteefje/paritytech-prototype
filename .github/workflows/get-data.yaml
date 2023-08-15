@@ -44,4 +44,4 @@ jobs:
         git config --global user.name 'GitHub Action'
         git config --global user.email 'github-actions@example.com'
         git diff
-        git diff --quiet || (git add . && git commit -m 'Automated update from GitHub Actions' && git push https://${{ secrets.GH_PAT }}@github.com/OWNER/REPO.git HEAD:main)
+        git diff --quiet || (git add . && git commit -m 'Automated update from GitHub Actions' && git push https://${{ secrets.GH_PAT }}@github.com/wentelteefje/paritytech-prototype.git HEAD:main)

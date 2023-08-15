@@ -51,5 +51,5 @@ for (repo,label) in zip(repo_list,label_list):
 sorted_trophy_data = sorted(trophy_data, key=lambda x: x['days_ago'])
 
 # Save sorted data to JSON file
-with open('trophy_data.json', 'w') as f:
+with open('../data/trophy_data.json', 'w') as f:
     json.dump(sorted_trophy_data, f)
