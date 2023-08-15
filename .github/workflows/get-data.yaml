@@ -2,15 +2,18 @@ name: Run Python Scripts
 
 on:
   schedule:
-    - cron:  '0 * * * *'  # This line means it will run at the start of every hour
+    - cron:  '0 * * * *'  # This runs at the start of every hour
 
 jobs:
   get-data:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GH_PAT }}  # Using the PAT for checkout
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -21,20 +24,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests  # or any other dependencies your scripts may have
 
-    - name: Give execute permissions
-      run: chmod +x $GITHUB_WORKSPACE/scripts/get-info.py
-
     - name: Run get-info.py
       run: python $GITHUB_WORKSPACE/scripts/get-info.py
-      
-    - name: Give execute permissions
-      run: chmod +x $GITHUB_WORKSPACE/scripts/get-issues.py
 
     - name: Run get_issues.py
       run: python $GITHUB_WORKSPACE/scripts/get-issues.py
-
-    - name: Give execute permissions
-      run: chmod +x $GITHUB_WORKSPACE/scripts/get-trophies.py
 
     - name: Run get_trophies.py
       run: python $GITHUB_WORKSPACE/scripts/get-trophies.py
@@ -44,4 +38,4 @@ jobs:
         git config --global user.name 'GitHub Action'
         git config --global user.email 'github-actions@example.com'
         git diff
-        git diff --quiet || (git add . && git commit -m 'Automated update from GitHub Actions' && git push https://${{ secrets.GH_PAT }}@github.com/wentelteefje/paritytech-prototype.git HEAD:main)
+        git diff --quiet || (git add . && git commit -m 'Automated update from GitHub Actions' && git push)
