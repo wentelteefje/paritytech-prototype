@@ -21,6 +21,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests  # or any other dependencies your scripts may have
 
+    - name: List contents of workspace
+      run: |
+        ls -la $GITHUB_WORKSPACE
+
     - name: Give execute permissions
       run: chmod +x $GITHUB_WORKSPACE/scripts/get_info.py
 
