@@ -90,5 +90,6 @@ for repo in repo_list:
         "contributors": contributor_info
     }
 
-with open('../data/repo_info.json', 'w') as f:
+data_path = os.path.join(dir_path, 'repo_info.json')
+with open(data_path, 'w') as f:
     json.dump(results, f)
