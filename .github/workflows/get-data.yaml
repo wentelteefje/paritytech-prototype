@@ -23,7 +23,7 @@ jobs:
 
     - name: List contents of workspace
       run: |
-        ls -la $GITHUB_WORKSPACE
+        ls -la $GITHUB_WORKSPACE/scripts
 
     - name: Give execute permissions
       run: chmod +x $GITHUB_WORKSPACE/scripts/get_info.py
