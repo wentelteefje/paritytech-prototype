@@ -3,6 +3,8 @@ import requests
 import json
 from datetime import datetime, timedelta
 
+dir_path = os.path.join(os.environ['GITHUB_WORKSPACE'], 'data')
+os.makedirs(dir_path, exist_ok=True)
 
 # token = os.getenv('TOKEN')  # Get the API token from environment variable
 owner = "paritytech"  # GitHub username
