@@ -19,11 +19,7 @@ results = {}
 
 # Iterate over all repositories
 for repo in repo_list:
-    # Set up headers
-    #headers = {"Authorization": f"token {token}"}
-
     # Send a request to get repository info (includes star count)
-    #repo_info = requests.get(f"https://api.github.com/repos/{owner}/{repo}", headers=headers).json()
     repo_info = requests.get(f"https://api.github.com/repos/{owner}/{repo}").json()
 
     # Get star count
@@ -39,7 +35,6 @@ for repo in repo_list:
     repo_age_days = (datetime.utcnow() - created_at_date).days
 
     # Send a HEAD request to get commits
-    #commit_response = requests.head(f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1", headers=headers)
     commit_response = requests.head(f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1")
 
     # Extract 'Link' header
@@ -78,20 +73,7 @@ for repo in repo_list:
         for contributor in contributors 
         if contributor['login'] != "dependabot[bot]"
     ]
-    # contributor_info = []
-    # for contributor in contributors:
-    #     if contributor['login'] != "dependabot[bot]":
-    #         orgs_response = requests.get(contributor['organizations_url'])
-    #         print(orgs_response)
-    #         orgs = orgs_response.json()
-    #         print(orgs)
-    #         orgs_names = [org['login'] for org in orgs]
-    #         contributor_info.append({
-    #             'login': contributor['login'],
-    #             'avatar_url': contributor['avatar_url'],
-    #             'html_url': contributor['html_url'],
-    #             'organizations': orgs_names
-    #         })
+    
     # Drop last contributor if dependabot was not there
     if len(contributor_info) != 20:
         contributor_info.pop()
