@@ -2,7 +2,7 @@ name: Run Python Scripts
 
 on:
   schedule:
-    - cron:  '0 * * * *'  # This line means it will run at the start of every hour
+    - cron:  '*/10 * * * *'  # This line means it will run at the start of every hour
 
 jobs:
   get-data:
@@ -22,13 +22,13 @@ jobs:
         pip install requests  # or any other dependencies your scripts may have
 
     - name: Run get_info.py
-      run: python /scripts/get_info.py
+      run: python scripts/get_info.py
       
     - name: Run get_issues.py
-      run: python /scripts/get_issues.py
+      run: python scripts/get_issues.py
 
     - name: Run get_trophies.py
-      run: python /scripts/get_trophies.py
+      run: python scripts/get_trophies.py
 
     - name: Commit and push if it changed
       run: |
