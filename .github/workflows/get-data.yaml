@@ -25,7 +25,7 @@ jobs:
       run: chmod +x $GITHUB_WORKSPACE/scripts/get-info.py
 
     - name: Run get-info.py
-      run: python $GITHUB_WORKSPACE/scripts/get_info.py
+      run: python $GITHUB_WORKSPACE/scripts/get-info.py
       
     - name: Give execute permissions
       run: chmod +x $GITHUB_WORKSPACE/scripts/get-issues.py
