@@ -2,7 +2,7 @@ name: Run Python Scripts
 
 on:
   schedule:
-    - cron:  '*/10 * * * *'  # This line means it will run at the start of every hour
+    - cron:  '0 * * * *'  # This line means it will run at the start of every hour
 
 jobs:
   get-data:
