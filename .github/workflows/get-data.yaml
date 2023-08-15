@@ -21,27 +21,23 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests  # or any other dependencies your scripts may have
 
-    - name: List contents of workspace
-      run: |
-        ls -la $GITHUB_WORKSPACE/scripts
-
     - name: Give execute permissions
-      run: chmod +x $GITHUB_WORKSPACE/scripts/get_info.py
+      run: chmod +x $GITHUB_WORKSPACE/scripts/get-info.py
 
-    - name: Run get_info.py
+    - name: Run get-info.py
       run: python $GITHUB_WORKSPACE/scripts/get_info.py
       
     - name: Give execute permissions
-      run: chmod +x $GITHUB_WORKSPACE/scripts/get_issues.py
+      run: chmod +x $GITHUB_WORKSPACE/scripts/get-issues.py
 
     - name: Run get_issues.py
-      run: python $GITHUB_WORKSPACE/scripts/get_issues.py
+      run: python $GITHUB_WORKSPACE/scripts/get-issues.py
 
     - name: Give execute permissions
-      run: chmod +x $GITHUB_WORKSPACE/scripts/get_trophies.py
+      run: chmod +x $GITHUB_WORKSPACE/scripts/get-trophies.py
 
     - name: Run get_trophies.py
-      run: python $GITHUB_WORKSPACE/scripts/get_trophies.py
+      run: python $GITHUB_WORKSPACE/scripts/get-trophies.py
 
     - name: Commit and push if it changed
       run: |
