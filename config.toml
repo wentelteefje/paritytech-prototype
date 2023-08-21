@@ -6,6 +6,7 @@ enableGitInfo = true
 [params]
   BookLogo = 'parity-logo-square-w.png'
   BookSearch = false
+  BookSection = '*'
 [markup]
   [markup.tableOfContents]
     endLevel = 3
