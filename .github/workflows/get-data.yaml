@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.GH_PAT }}  # Using the PAT for checkout
+      # with:
+      #   token: ${{ secrets.GH_PAT }}  # Using the PAT for checkout
 
     - name: Set up Python
       uses: actions/setup-python@v2
