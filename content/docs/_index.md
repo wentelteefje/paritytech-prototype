@@ -37,7 +37,7 @@ Welcome to your gateway to Parity Technologies' blockchain projects. This platfo
 - [Canvas UI](https://paritytech.github.io/canvas-ui) [{{<insert-icon "github" "small">}}](https://github.com/paritytech/canvas-ui)
 - [wasmi](https://paritytech.github.io/wasmi) [{{<insert-icon "github" "small">}}](https://github.com/paritytech/wasmi)
 - [Subxt](https://paritytech.github.io/subxt) [{{<insert-icon "github" "small">}}](https://github.com/paritytech/subxt)
-- [try-runtime-cli](https://paritytech.github.io/try-runtime-cli/try_runtime_cli) [{{<insert-icon "github" "small">}}](https://github.com/paritytech/try-runtime-cli)
+- [try-runtime-cli](https://paritytech.github.io/try-runtime-cli/try_runtime) [{{<insert-icon "github" "small">}}](https://github.com/paritytech/try-runtime-cli)
 - [SCALE codec](https://docs.rs/parity-scale-codec/latest/parity_scale_codec/) [{{<insert-icon "github" "small">}}](https://github.com/paritytech/parity-scale-codec) [{{<insert-doc-icon>}}](https://wentelteefje.github.io/parity-scale-codec-page/docs/intro/) 
 
 ## DApps
