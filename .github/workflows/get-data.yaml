@@ -2,7 +2,7 @@ name: Run Python Scripts
 
 on:
   schedule:
-    - cron:  '0 * * * *'  # This runs at the start of every hour
+    - cron:  '0 12 * * *'  # This runs at 12:00 every day
 
 jobs:
   get-data:
