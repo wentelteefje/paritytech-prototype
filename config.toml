@@ -5,7 +5,7 @@ theme = 'hugo-book-master'
 enableGitInfo = true
 [params]
   BookLogo = 'parity-logo-square-w.png'
-  BookSearch = true
+  BookSearch = false
   BookSection = '*'
 [markup]
   [markup.tableOfContents]
